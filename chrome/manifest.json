@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Superchat Live Log",
+    "version": "1.4.8",
+    "author": "Jonathan Chan",
+
+    "description": "Displays a live log of YouTube Superchats; so you can read them at your own pace or filter them as you please.",
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.youtube.com/*"],
+            "js": ["dom-insertion.js"],
+            "run_at": "document_start"
+        }
+    ],
+
+    "permissions": [
+        "storage"
+    ],
+
+    "web_accessible_resources": [
+        {
+          "resources": [ "superchat-live-logs.js" ],
+          "matches": ["*://*.youtube.com/*"]
+        },
+        {
+          "resources": [ "pin-animator.js" ],
+          "matches": ["*://*.youtube.com/*"]
+        }
+    ]
+}
